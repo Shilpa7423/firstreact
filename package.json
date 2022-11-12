@@ -1,5 +1,5 @@
 {
-  "homepage":"http://Shilpa7423.github.io/firstreact",
+  "homepage": "http://Shilpa7423.github.io/firstreact",
   "name": "myreact",
   "version": "0.1.0",
   "private": true,
@@ -14,8 +14,8 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "predeploy":"npm run build",
-    "deploy":"react-basics -d build",
+    "predeploy": "npm run build",
+    "deploy": "react-basics -d build",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -39,6 +39,7 @@
     ]
   },
   "devDependencies": {
-    "gh-pages": "^4.0.0"
+    "gh-pages": "^4.0.0",
+    "react-basics": "^0.21.0"
   }
 }
