@@ -13,6 +13,11 @@ function ExpenseItem(props) {
   //React.createElement(ExpenseDetails,{Amount:props.amount},{}),
   //React.createElement(ExpenseDetails,{location:props.location},{}),
     //  );
+    function clickHandler()
+    {
+     console.log("deleted");
+     
+    }
   
   return (
     < Card className="expense-item">
@@ -20,6 +25,7 @@ function ExpenseItem(props) {
       <ExpenseDetails Title={props.title} />
       <ExpenseDetails Amount={props.amount} />
       <ExpenseDetails location={props.location} />
+      <button onClick={clickHandler}>Delete Expense</button>
     </Card>
   );
 }
