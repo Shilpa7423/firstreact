@@ -13,21 +13,21 @@ function ExpenseItem(props) {
   //React.createElement(ExpenseDetails,{Amount:props.amount},{}),
   //React.createElement(ExpenseDetails,{location:props.location},{}),
     //  );
-    const [initialExpense, setExpense]=useState(props.amount);
+    //const [initialExpense, setExpense]=useState(props.amount);
    
 
-    function changeExpense()
-    {
-        setExpense("$100");
-        console.log(initialExpense);
-    }
+    //function changeExpense()
+    //{
+      //  setExpense("$100");
+        //console.log(initialExpense);
+    //}
+     //<button onClick={changeExpense}>Change Expense to $100</button>
   
   return (
     < Card className="expense-item">
       <ExpenseDate date={props.date} />
       <ExpenseDetails Title={props.title} />
-      <ExpenseDetails Amount={initialExpense} />
-      <button onClick={changeExpense}>Change Expense to $100</button>
+      <ExpenseDetails Amount={props.amount} />
       <ExpenseDetails location={props.location} />
     </Card>
   );
