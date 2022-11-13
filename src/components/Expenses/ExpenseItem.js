@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import ExpenseDate from "./ExpenseDate";
 import ExpenseDetails from "./ExpenseDetails.js";
 import "./ExpenseItem.css";
@@ -13,19 +13,22 @@ function ExpenseItem(props) {
   //React.createElement(ExpenseDetails,{Amount:props.amount},{}),
   //React.createElement(ExpenseDetails,{location:props.location},{}),
     //  );
-    function clickHandler()
+    const [initialExpense, setExpense]=useState(props.amount);
+    const [a,b]=useState(props.amount);
+
+    function changeExpense()
     {
-     console.log("deleted");
-     
+        setExpense("$100");
+        console.log(initialExpense);
     }
   
   return (
     < Card className="expense-item">
       <ExpenseDate date={props.date} />
       <ExpenseDetails Title={props.title} />
-      <ExpenseDetails Amount={props.amount} />
+      <ExpenseDetails Amount={initialExpense} />
+      <button onClick={changeExpense}>Change Expense to $100</button>
       <ExpenseDetails location={props.location} />
-      <button onClick={clickHandler}>Delete Expense</button>
     </Card>
   );
 }
