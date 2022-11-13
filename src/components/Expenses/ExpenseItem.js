@@ -22,7 +22,10 @@ function ExpenseItem(props) {
         //console.log(initialExpense);
     //}
      //<button onClick={changeExpense}>Change Expense to $100</button>
-  
+     const [enteredTitle,updateTitle]=useState(props.title);
+     const [enteredAmount,updateAmount]=useState(props.amount);
+     const [enteredDate,updateDate]=useState(props.date);
+
   return (
     < Card className="expense-item">
       <ExpenseDate date={props.date} />
