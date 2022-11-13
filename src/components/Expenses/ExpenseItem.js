@@ -14,7 +14,7 @@ function ExpenseItem(props) {
   //React.createElement(ExpenseDetails,{location:props.location},{}),
     //  );
     const [initialExpense, setExpense]=useState(props.amount);
-    const [a,b]=useState(props.amount);
+   
 
     function changeExpense()
     {
