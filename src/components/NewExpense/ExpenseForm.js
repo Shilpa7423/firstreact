@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./ExpenseForm.css";
-const ExpenseForm = () => {
+const ExpenseForm = (props) => {
    const [enteredTitle,setTitle]=useState("");
     const [enteredAmount,setAmount]=useState("");
     const [enteredDate,setDate]=useState("");
@@ -30,7 +30,8 @@ const ExpenseForm = () => {
             amount:enteredAmount,
             date:enteredDate
            }
-           console.log(expenseData);
+          // console.log("In Expense form "+JSON.stringify(expenseData));
+          props.childToPareFormToNewExp(expenseData);
            setTitle("");
            setAmount("");
            setDate("");
