@@ -1,9 +1,57 @@
-import ExpenseItem from "./components/ExpenseItem";
-function App() {
+import  { useState } from 'react';
+import Expenses from './components/Expenses/Expenses';
+import NewExpense from './components/NewExpense/NewExpense';
+
+  const dummyValues = [
+    {
+      id: 'e1',
+      title: 'Toilet Paper',
+      amount: 94.12,
+      date: new Date(2020, 7, 14),
+      location:"Canada",
+    },
+    { id: 'e2', 
+    title: 'New TV', 
+    amount: 799.49, 
+    date: new Date(2021, 2, 28) ,
+    location:"UK",
+  },
+    {
+      id: 'e3',
+      title: 'Car Insurance',
+      amount: 294.67,
+      date: new Date(2021, 5, 12),
+      location:"USA",
+    },
+    {
+      id: 'e4',
+      title: 'New Desk (Wooden)',
+      amount: 450,
+      date: new Date(2021, 2, 12),
+      location:"Africa",
+    },
+  ];
+  function App() {
+  const [wexpense,setExpense]=useState(dummyValues);
+
+
+ 
+  const AppExpenseData =(enteredExpenseDatainNewExpense)=>
+  {
+    console.log("In app ");
+    setExpense((prevEnteredValues)=>{
+      console.log("old -"+JSON.stringify(prevEnteredValues));
+      console.log("newly entered- "+JSON.stringify(enteredExpenseDatainNewExpense))
+    return [enteredExpenseDatainNewExpense,...prevEnteredValues]
+  });
+    
+  };
+      
   return (
     <>
-       <h1>Hello React</h1> 
-       <ExpenseItem></ExpenseItem>
+       <NewExpense fromNewExpToApp={AppExpenseData} />
+       <Expenses items={wexpense} />
+      
     </>
   );
 }
