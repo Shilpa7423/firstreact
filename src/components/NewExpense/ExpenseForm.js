@@ -31,10 +31,10 @@ const ExpenseForm = (props) => {
            {
             title:enteredTitle,
             amount:enteredAmount,
-            date:enteredDate,
+            date: new Date(enteredDate),
             location:eneteredLocation
           }
-          // console.log("In Expense form "+JSON.stringify(expenseData));
+           console.log("In Expense form "+JSON.stringify(expenseData));
           props.childToPareFormToNewExp(expenseData);
            setTitle("");
            setAmount("");
