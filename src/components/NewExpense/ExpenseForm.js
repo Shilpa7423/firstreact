@@ -4,7 +4,7 @@ const ExpenseForm = (props) => {
    const [enteredTitle,setTitle]=useState("");
     const [enteredAmount,setAmount]=useState("");
     const [enteredDate,setDate]=useState("");
-   
+    const [eneteredLocation,setLocation]=useState("");
     function titleChangeHandler(event)
     {
         
@@ -19,7 +19,10 @@ const ExpenseForm = (props) => {
     function dateChangeHandler(event)
     {
         setDate(event.target.value);
-       
+    }
+    function locationChangeHandler(event)
+    {
+      setLocation(event.target.value);
     }
     function submitHandler(event)
     {
@@ -28,14 +31,16 @@ const ExpenseForm = (props) => {
            {
             title:enteredTitle,
             amount:enteredAmount,
-            date:enteredDate
-           }
+            date:enteredDate,
+            location:eneteredLocation
+          }
           // console.log("In Expense form "+JSON.stringify(expenseData));
           props.childToPareFormToNewExp(expenseData);
            setTitle("");
            setAmount("");
            setDate("");
     }
+   
   return (
     <form onSubmit={submitHandler} >
       <div className="new-expense__controls">
@@ -50,6 +55,10 @@ const ExpenseForm = (props) => {
         <div className="new-expense__control">
           <label>Date</label>
           <input type="date" value={enteredDate} min="2019-01-01" max="2022-12-31" onChange={dateChangeHandler}  />
+        </div>
+        <div className="new-expense__control">
+          <label>Location</label>
+          <input type="text" value={eneteredLocation}  onChange={locationChangeHandler}  />
         </div>
       </div>
       <div className="new-expense__actions">

@@ -1,7 +1,8 @@
+import react, { useState } from 'react';
 import Expenses from './components/Expenses/Expenses';
 import NewExpense from './components/NewExpense/NewExpense';
 function App() {
-  const expenses = [
+  const dummyValues = [
     {
       id: 'e1',
       title: 'Toilet Paper',
@@ -30,18 +31,26 @@ function App() {
       location:"Africa"
     },
   ];
+
+  const [wexpense,setExpense]=useState(dummyValues);
+
+
  
   const AppExpenseData =(enteredExpenseDatainNewExpense)=>
   {
     console.log("In app ");
+    setExpense((prevEnteredValues)=>{
+      console.log("old -"+JSON.stringify(prevEnteredValues));
+      console.log("newly entered- "+JSON.stringify(enteredExpenseDatainNewExpense))
+    return [enteredExpenseDatainNewExpense,...prevEnteredValues]
+  });
     
-    console.log(enteredExpenseDatainNewExpense);
   };
       
   return (
     <>
        <NewExpense fromNewExpToApp={AppExpenseData} />
-       <Expenses items={expenses} />
+       <Expenses items={wexpense} />
       
     </>
   );

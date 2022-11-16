@@ -26,9 +26,9 @@ function ExpenseItem(props) {
     
   return (
     < Card className="expense-item">
-      <ExpenseDate date={props.date} />
       <ExpenseDetails Title={props.title} />
       <ExpenseDetails Amount={props.amount} />
+      <ExpenseDate date={props.date} />
       <ExpenseDetails location={props.location} />
     </Card>
   );
